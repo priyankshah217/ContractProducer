@@ -39,7 +39,7 @@
         <dockerfile-maven-plugin.version>1.4.12</dockerfile-maven-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
         <maven-surefire-report-plugin.version>3.0.0-M3</maven-surefire-report-plugin.version>
-        <pact.version>4.0.0-beta.5</pact.version>
+        <pact.version>4.0.0-beta.6</pact.version>
     </properties>
 
     <dependencies>
@@ -112,6 +112,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <systemProperties>
+                        <pact.verifier.publishResults>true</pact.verifier.publishResults>
+                    </systemProperties>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -150,8 +155,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>12</source>
-                    <target>12</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -193,18 +198,10 @@
                 <artifactId>pact-jvm-provider-maven</artifactId>
                 <version>${pact.version}</version>
                 <configuration>
-                    <pactBrokerUrl>http://localhost</pactBrokerUrl>
                     <serviceProviders>
                         <serviceProvider>
                             <name>TweetProvider</name>
-
-                            <!--                            <consumers>-->
-                            <!--                                <consumer>-->
-                            <!--                                    <name>TweetConsumer</name>-->
-                            <!--                                    &lt;!&ndash;  currently supports a file path using pactFile or a URL using pactUrl &ndash;&gt;-->
-                            <!--                                    <pactUrl>http://localhost/pacts/provider/TweetProvider/consumer/TweetConsumer</pactUrl>-->
-                            <!--                                </consumer>-->
-                            <!--                            </consumers>-->
+                            <pactBrokerUrl>http://localhost</pactBrokerUrl>
                         </serviceProvider>
                     </serviceProviders>
                 </configuration>
