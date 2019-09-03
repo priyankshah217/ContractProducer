@@ -14,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -108,7 +109,7 @@ class TweetControllerTest {
     Tweet tweet2 = new Tweet();
     tweet2.setUserID("2");
     tweet2.setTweetDescription("This is my second tweet");
-    List<Tweet> tweetList = List.of(tweet1, tweet2);
+    List<Tweet> tweetList = Arrays.asList(tweet1, tweet2);
 
     when(tweetService.getAllTweets()).thenReturn(tweetList);
     mockMvc.perform(get("/tweet/")

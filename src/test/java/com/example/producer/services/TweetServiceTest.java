@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -60,7 +61,7 @@ class TweetServiceTest {
     Tweet tweet2 = new Tweet();
     tweet2.setUserID("1");
     tweet2.setTweetDescription("My second tweet");
-    List<Tweet> expectedListOfTweets = List.of(tweet1, tweet2);
+    List<Tweet> expectedListOfTweets = Arrays.asList(tweet1, tweet2);
     when(tweetRepository.findAll()).thenReturn(expectedListOfTweets);
     final List<Tweet> actualListOfTweets = tweetService.getAllTweets();
     assertThat(actualListOfTweets).isEqualTo(expectedListOfTweets);
