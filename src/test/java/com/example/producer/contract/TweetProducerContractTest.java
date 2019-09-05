@@ -18,6 +18,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @Provider("TweetProvider")
 @PactBroker(consumers = "TweetConsumer", host = "localhost")
+//@PactBroker(consumers = "TweetConsumer", host = "test.pact.dius.com.au", authentication =
+//@PactBrokerAuth(username = "dXfltyFMgNOFZAxr8io9wJ37iUpY42M", password = "O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1"))
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TweetProducerContractTest {
   @LocalServerPort

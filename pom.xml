@@ -198,12 +198,19 @@
                 <artifactId>pact-jvm-provider-maven</artifactId>
                 <version>${pact.version}</version>
                 <configuration>
+                    <pactBrokerUrl>http://localhost</pactBrokerUrl>
+                    <!--                    <pactBrokerUrl>https://test.pact.dius.com.au</pactBrokerUrl>-->
+                    <!--                    <pactBrokerUsername>dXfltyFMgNOFZAxr8io9wJ37iUpY42M</pactBrokerUsername>-->
+                    <!--                    <pactBrokerPassword>O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1</pactBrokerPassword>-->
                     <serviceProviders>
                         <serviceProvider>
                             <name>TweetProvider</name>
-                            <pactBrokerUrl>http://localhost</pactBrokerUrl>
+                            <!--                            <pactBrokerUrl>http://localhost</pactBrokerUrl>-->
                         </serviceProvider>
                     </serviceProviders>
+                    <reports>
+                        <report>console</report>
+                    </reports>
                 </configuration>
             </plugin>
         </plugins>
