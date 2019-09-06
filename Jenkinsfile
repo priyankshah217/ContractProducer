@@ -11,5 +11,10 @@ pipeline {
         sh './mvnw clean test pact:verify'
       }
     }
+    stage('Archive Results') {
+      steps {
+        junit(keepLongStdio: true, allowEmptyResults: true, testResults: '**/target/surefire-reports/TEST-*.xml')
+      }
+    }
   }
 }
