@@ -29,17 +29,17 @@
         <docker.image.prefix>spring-producer</docker.image.prefix>
         <finalName>producer-app</finalName>
         <javafaker.version>1.0.1</javafaker.version>
-        <spring-boot-starter-web.version>2.1.7.RELEASE</spring-boot-starter-web.version>
-        <h2.version>1.4.199</h2.version>
-        <lombok.version>1.18.8</lombok.version>
-        <jackson-databind.version>2.10.0.pr3</jackson-databind.version>
-        <sonar-maven-plugin.version>3.6.0.1398</sonar-maven-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M1</maven-surefire-plugin.version>
-        <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
-        <dockerfile-maven-plugin.version>1.4.12</dockerfile-maven-plugin.version>
+        <spring-boot-starter-web.version>2.2.2.RELEASE</spring-boot-starter-web.version>
+        <h2.version>1.4.200</h2.version>
+        <lombok.version>1.18.10</lombok.version>
+        <jackson-databind.version>2.10.1</jackson-databind.version>
+        <sonar-maven-plugin.version>3.6.3</sonar-maven-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+        <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
-        <maven-surefire-report-plugin.version>3.0.0-M3</maven-surefire-report-plugin.version>
-        <pact.version>4.0.0-beta.6</pact.version>
+        <maven-surefire-report-plugin.version>3.0.0-M4</maven-surefire-report-plugin.version>
+        <pact.version>4.0.4</pact.version>
     </properties>
 
     <dependencies>
@@ -51,6 +51,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -70,6 +71,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
@@ -79,8 +81,14 @@
             <version>${jackson-databind.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
