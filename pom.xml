@@ -30,7 +30,7 @@
         <finalName>producer-app</finalName>
         <javafaker.version>1.0.1</javafaker.version>
         <spring-boot-starter-web.version>2.5.12</spring-boot-starter-web.version>
-        <h2.version>1.4.200</h2.version>
+        <h2.version>2.2.220</h2.version>
         <lombok.version>1.18.10</lombok.version>
         <jackson-databind.version>2.12.1</jackson-databind.version>
         <sonar-maven-plugin.version>3.6.3</sonar-maven-plugin.version>
